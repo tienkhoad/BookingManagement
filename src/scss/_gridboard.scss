@@ -1,0 +1,134 @@
+// General styles for the board
+.board {
+    background: white;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    position: relative;
+    height: auto;
+  
+    &.booked {
+      background: white;
+    }
+  
+    &.pending {
+      background: orange;
+    }
+  
+    &.processing {
+      background: yellow;
+    }
+  }
+  
+  // Header styles for the board
+  .board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  // Icons container within the board header
+  .board-icons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  // Individual icons within the board header
+  .board-icon {
+    cursor: pointer;
+    color: #000;
+  }
+  
+  // Tooltip styles for the board
+  .board-tooltip {
+    max-width: 200px;
+    background-color: #fff;
+    color: #333;
+    padding: 8px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  // Content within the tooltip
+  .tooltip-content {
+    text-align: left;
+  
+    p {
+      margin: 6px 0;
+      cursor: pointer;
+    }
+  
+    p:hover {
+      background-color: #f0f0f0;
+    }
+  }
+  
+  .layout {
+    background: #f0f0f0;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .grid-item {
+    padding: 10px;
+    flex: 1 1 calc(33.333% - 20px); /* Adjusts based on the number of columns you want */
+    box-sizing: border-box;
+  }
+  
+  // Droppable element styles
+  .droppable-element {
+    background: #f9f9f9;
+    border: 1px dashed #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  // Margin-bottom utility class
+  .mb-4 {
+    margin-bottom: 16px;
+  }
+  
+  // Grid item styles
+  .grid-item {
+    padding: 10px;
+  }
+  
+  // Heading styles
+  h2 {
+    margin: 20px 0 10px 0;
+    font-size: 1.5em;
+  }
+  
+  .board-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .board-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-right: 0.5%;
+  }
+  
+  .board-action-btn:last-child {
+    margin-right: 0;
+  }
+
+  .popup-item {
+    margin: 10px 0;
+    cursor: pointer;
+    padding: 8px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+  }
+  
+  .popup-item:hover {
+    background-color: #e0e0e0;
+  }
+  
