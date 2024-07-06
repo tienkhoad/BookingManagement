@@ -14,9 +14,16 @@ import {
   CRow,
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
-import { cilLockLocked, cilUser } from '@coreui/icons'
+import { cilLockLocked, cilUser } from '@coreui/icons';
+import { useDispatch } from 'react-redux';
 
 const Login = () => {
+  const dispatch = useDispatch();
+
+  const handleLogin = () => {
+    // replace 'test' and '1' with the actual username and password entered by the user
+    dispatch({ type: 'login', username: 'admin', password: 'admin' });
+  };
   return (
     <div className="bg-body-tertiary min-vh-100 d-flex flex-row align-items-center">
       <CContainer>
@@ -46,7 +53,7 @@ const Login = () => {
                     </CInputGroup>
                     <CRow>
                       <CCol xs={6}>
-                        <CButton color="primary" className="px-4">
+                        <CButton color="primary" className="px-4" onClick={handleLogin}>
                           Login
                         </CButton>
                       </CCol>

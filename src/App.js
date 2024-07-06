@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import PrivateRoute from './share/components/PrivateRoute'
 import Login from './modules/login/views'
 import { AuthProvider } from './modules/auth/hooks/AuthContext'
-import { CSpinner, useColorModes } from '@coreui/react'
+import { CSpinner, useColorModes } from '@coreui/react';
 import './scss/style.scss'
 
 // Containers
@@ -17,6 +17,7 @@ const Page404 = React.lazy(() => import('./views/pages/page404/Page404'))
 const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 
 const App = () => {
+  const isAuthenticated = useSelector(state => state.isAuthenticated);
   const { isColorModeSet, setColorMode } = useColorModes('coreui-free-react-admin-template-theme')
   const storedTheme = useSelector((state) => state.theme)
 
@@ -49,11 +50,15 @@ const App = () => {
             <Route path="/register" name="Register Page" element={<Register />} />
             <Route path="/404" name="Page 404" element={<Page404 />} />
             <Route path="/500" name="Page 500" element={<Page500 />} />
-            <Route path="*" name="Home" element={
-              <PrivateRoute>
-                <DefaultLayout />
-              </PrivateRoute>
-            } />
+            <Route
+              path="*"
+              name="Home"
+              element={
+                <PrivateRoute>
+                  <DefaultLayout />
+                </PrivateRoute>
+              }
+            />
           </Routes>
         </Suspense>
       </AuthProvider>

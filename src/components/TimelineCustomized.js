@@ -15,4 +15,12 @@ const TimelineCustomized = ({ groups, items, defaultTimeStart, defaultTimeEnd, h
   </div>
 );
 
+TimelineCustomized.propTypes = {
+  groups: PropTypes.array.isRequired,
+  items: PropTypes.array.isRequired,
+  defaultTimeStart: PropTypes.object,
+  defaultTimeEnd: PropTypes.object,
+  height: PropTypes.string
+};
+
 export default TimelineCustomized;
